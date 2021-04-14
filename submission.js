@@ -46,7 +46,16 @@ return pairer[0];
 
 //5
 const removeParenth = function(str) {
-  // your code here - don't forget to return a string!
+arrayForStr = str.split('');
+let a = arrayForStr.indexOf('(');
+let b = 1;
+let i = arrayForStr[a];
+while(i != ')') {
+  i = arrayForStr[a+b];
+  b++;
+}
+arrayForStr.splice(a,b);
+return arrayForStr.join('');
 };
 
 
