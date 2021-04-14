@@ -1,7 +1,7 @@
 //1
 const findSum = function(array) {
 let summer = 0;
-for(i=0; i < array.length; i++){
+for(let i = 0; i < array.length; i++){
 summer = summer + array[i];
 }
 return summer;
@@ -35,7 +35,7 @@ if (counter === Math.ceil(str.length/2)){
 //4
 const largestPair = function(array) {
 let pairer=[];
-for (i = 0; i < array.length-1; i++) {
+for (let i = 0; i < array.length-1; i++) {
  pairer[i] = array[i] * array[i+1];
 }
 pairer.sort();
