@@ -10,7 +10,42 @@ return summer;
 
 //2
 const findFrequency = function(array) {
-  // your code here - don't forget to return an object!
+  let objMain = {most:'', least:''};
+  let objSub = {};
+  let counter = 0;
+  let stringTracker = [];
+  let mostVar;
+  let leastVar;
+  let summer1 = 0;
+  let summer2 = 0;
+ array.sort();
+ while (array.length > 0){
+if (array[0] === array[0+counter]) {
+counter++;
+} else {
+objSub[array[0]] = counter;
+stringTracker.push(array[0]);
+array.splice(0,counter);
+counter = 0;
+};
+};
+for (let i = 0; i < stringTracker.length; i++) {
+  for (let j = 0; j < stringTracker.length; j++) {
+    if (objSub[stringTracker[i]] >= objSub[stringTracker[j]]) {summer1++};
+  }
+  if (summer1 === stringTracker.length) {mostVar = stringTracker[i]; summer1 = 0;}
+  else (summer1 = 0);
+}
+for (let k = 0; k < stringTracker.length; k++) {
+  for (let l = 0; l < stringTracker.length; l++) {
+    if (objSub[stringTracker[k]] <= objSub[stringTracker[l]]) {summer2++};
+  }
+  if (summer2 === stringTracker.length) {leastVar = stringTracker[k]; summer2 = 0;}
+  else (summer2 = 0);
+}
+objMain.most = mostVar;
+objMain.least = leastVar;
+return objMain;
 };
 
 
